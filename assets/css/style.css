@@ -1,0 +1,292 @@
+* {
+  box-sizing: 20px;
+  padding: 0;
+  margin: 0;
+}
+.center {
+  display: block;
+  width: 50vw;
+  margin-right: 2px;
+  margin-left: 2px;
+  margin-bottom: 2%;
+  flex: 1 0 50%;
+}
+
+.image {
+  display: block;
+  margin-right: 2px;
+  margin-left: 2px;
+  margin-bottom: 2%;
+  flex: 1 0 50%;
+}
+.side-block {
+  border: rgba(0, 0, 0, 0.125) solid 1px;
+}
+.side-block-right {
+  margin-left: 2px;
+  box-shadow: 8px 8px 8px #888888;
+  flex: 1 0 24%;
+}
+.side-block-left {
+  margin-right: 2px;
+  box-shadow: -8px 8px 8px #888888;
+  flex: 1 0 24%;
+}
+
+.side-block h4 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.logo {
+  max-width: 10%;
+  max-height: 10%;
+}
+
+#sign-up-btn {
+  position: absolute;
+  top: 0;
+  right: 0px;
+}
+
+/* sets container for date in calendar */
+#currentWeek {
+  color: #ec1212;
+  font-size: 17px;
+}
+#currentDay {
+  color: #1e3bfb;
+  font-size: 22px;
+}
+.dayContainer {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* set vertical text */
+.vText {
+  margin: 0;
+  padding: 0;
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+}
+
+/*For the calendar div*/
+textarea {
+  background: transparent;
+  border: none;
+  resize: none;
+  color: #000000;
+  border-left: 1px solid black;
+  /* padding: 10px; */
+  float: left;
+}
+
+/*For the calendar div*/
+.calRow {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  white-space: pre-wrap;
+  height: 100px;
+  border-top: 1px solid white;
+}
+
+/*For the calendar div*/
+.day {
+  background-color: #ffffff;
+  color: #000000;
+  border-top: 1px dashed #000000;
+}
+
+/*For the calendar div*/
+.past {
+  background-color: #d3d3d3;
+  color: white;
+  border-radius: 0 15px 15px 0;
+}
+
+/*For the calendar div*/
+.present {
+  background-color: #0b9aff;
+  color: white;
+  border-radius: 0 15px 15px 0;
+}
+
+/*For the calendar div*/
+.future {
+  background-color: #e8f5fe;
+  color: white;
+  border-radius: 0 15px 15px 0;
+}
+
+/*For the calendar div*/
+.holiday {
+  background-color: #69e097;
+  color: white;
+  border-radius: 0 15px 15px 0;
+}
+
+/*For the calendar div*/
+.saveBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #0b9aff;
+  color: white;
+  /* padding-top: 15px; */
+}
+
+/*For the calendar div*/
+.saveBtn i:hover {
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.week-date-message {
+  font-size: 16px;
+  text-align: center;
+}
+
+.board {
+  background: #0b9aff;
+  display: inline-block;
+  padding: 12px;
+  border-radius: 3px;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: scroll;
+  height: 95.5%;
+}
+
+.board-column {
+  width: 100%;
+  background: #f0f0f0;
+  padding-top: 0pt;
+}
+.board-column.muuri-item-releasing {
+  z-index: 2;
+}
+.board-column.muuri-item-dragging {
+  z-index: 3;
+  cursor: move;
+}
+.board-column-header {
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  overflow: hidden;
+  padding: 0 20px;
+  text-align: center;
+  background: #333;
+  color: #fff;
+  border-radius: 3px 3px 0 0;
+}
+@media (max-width: 600px) {
+  .board-column-header {
+    /* text-indent: -1000px; */
+  }
+}
+.board-column.todo .board-column-header {
+  background: #f78f8f;
+}
+.board-column.working .board-column-header {
+  background: #ffc49c;
+}
+.board-column.done .board-column-header {
+  background: #bae0bd;
+}
+/* This is the secret sauce,
+   always use a wrapper for setting
+   the "overflow: scroll/auto" */
+.board-column-content-wrapper {
+  position: relative;
+  max-height: 300px;
+  overflow-y: auto;
+}
+/* Never ever set "overflow: auto/scroll"
+   to the muuri element, stuff will break */
+.board-column-content {
+  position: relative;
+  border: 10px solid transparent;
+  min-height: 95px;
+}
+.board-item {
+  position: absolute;
+  width: 100%;
+  margin: 5px 0;
+}
+.board-item.muuri-item-releasing {
+  z-index: 9998;
+}
+.board-item.muuri-item-dragging {
+  z-index: 9999;
+  cursor: move;
+}
+.board-item.muuri-item-hidden {
+  z-index: 0;
+}
+.board-item-content {
+  position: relative;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  font-size: 17px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.hide {
+  display: none;
+}
+
+#boardHeight {
+  height: 95.5%;
+}
+
+@media screen and (max-width: 991px) {
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .center {
+    display: none;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .side-block-left {
+    width: 100vw;
+    border: none;
+    box-shadow: none;
+  }
+
+  .side-block-right {
+    width: 100vw;
+    border: none;
+    box-shadow: none;
+  }
+  div .col {
+    width: 100%;
+  }
+}
