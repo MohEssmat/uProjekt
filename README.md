@@ -35,12 +35,3 @@ The following is a screenshot of uProjekt, highlighting the web page's appearanc
 ## uProjekt webpage
 
 The final link to the deployed uProjekt page is here: https://l-buchholz.github.io/project-1/
-
-## uProjekt development team members
-
-- Aaron Farrell
-- Collin Kerr
-- Lauren Buchholz
-- Moe Essmat
-- Olivia Hall
-# uProjekt
